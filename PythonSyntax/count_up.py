@@ -16,5 +16,10 @@ def count_up(start, stop):
     for num in range(start, stop+1):
         print(num)
 
+    # solution:
+    # while start <= stop:
+    #     print(start)
+    #     start = start + 1
+
 
 count_up(5, 7)
