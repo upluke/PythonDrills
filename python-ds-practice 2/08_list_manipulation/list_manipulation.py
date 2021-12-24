@@ -40,3 +40,22 @@ def list_manipulation(lst, command, location, value=None):
         >>> list_manipulation(lst, 'add', 'dunno') is None
         True
     """
+    if command in ['add', 'remove'] and location in ['end', 'beginning']:
+        obj = {
+            ("remove", "beginning"): lambda l: l[1:],
+            ("remove", "end"): lambda l: l[:-1],
+            ("add", "beginning"): lambda l, v: [v]+l,
+            ("add", "end"): lambda l, v: l+[v],
+        }
+
+        return obj[(command, location)](lst, value) if value else obj[(command, location)](lst)
+    else:
+        return None
+
+
+print(list_manipulation([1, 2, 3], 'remove', 'end'))  # [1,2]
+print(list_manipulation([1, 2, 3], 'remove', 'beginning'))  # [2,3]
+print(list_manipulation([1, 2, 3], 'add', 'beginning', 20))  # [20, 1, 2, 3]
+print(list_manipulation([1, 2, 3], 'add', 'end', 30))  # [1, 2, 3, 30]
+print(list_manipulation([1, 2, 3], 'foo', 'end'))  # None
+print(list_manipulation([1, 2, 3], 'add', 'dunno'))  # None
