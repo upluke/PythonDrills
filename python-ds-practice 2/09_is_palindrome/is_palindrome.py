@@ -21,3 +21,20 @@ def is_palindrome(phrase):
         >>> is_palindrome('Noon')
         True
     """
+
+    clean_input = get_clean_input(phrase)
+    return clean_input == clean_input[::-1]
+
+
+def get_clean_input(input):
+    new_input = ""
+    for char in input:
+        if char.isalpha():
+            new_input += char.lower()
+    return new_input
+
+
+print(is_palindrome('tacocat'))
+print(is_palindrome('robert'))
+print(is_palindrome('Noon'))
+print(is_palindrome('taco cat'))
