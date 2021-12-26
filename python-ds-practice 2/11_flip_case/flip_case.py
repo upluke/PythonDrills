@@ -15,7 +15,7 @@ def flip_case(phrase, to_swap):
     #     phrase.replace(to_swap,'_')
     # else:
     phrase = phrase.replace(to_swap, '_')
-    if ord(to_swap) >= 97:
+    if to_swap.islower():  # ord(to_swap) >= 97
         phrase = phrase.replace(to_swap.upper(), to_swap)
         phrase = phrase.replace('_', to_swap.upper())
     else:
