@@ -1,3 +1,6 @@
+import functools
+
+
 def extract_full_names(people):
     """Return list of names, extracting from first+last keys in people dicts.
 
@@ -14,3 +17,13 @@ def extract_full_names(people):
         >>> extract_full_names(names)
         ['Ada Lovelace', 'Grace Hopper']
     """
+    return functools.reduce(lambda acc, curr: acc +
+                            [curr["first"]+' '+curr["last"]], people, [])
+
+
+names = [
+    {'first': 'Ada', 'last': 'Lovelace'},
+    {'first': 'Grace', 'last': 'Hopper'},
+]
+
+print(extract_full_names(names))
