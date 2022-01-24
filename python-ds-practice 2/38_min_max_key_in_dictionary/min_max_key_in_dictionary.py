@@ -9,3 +9,11 @@ def min_max_keys(d):
         >>> min_max_keys({"apple": "red", "cherry": "red", "berry": "blue"})
         ('apple', 'cherry')
     """
+    res = []
+    res.append(min([key for key in d.keys()]))
+    res.append(max([key for key in d.keys()]))
+    return tuple(res)
+
+
+print(min_max_keys({2: 'a', 7: 'b', 1: 'c', 10: 'd', 4: 'e'}))
+print(min_max_keys({"apple": "red", "cherry": "red", "berry": "blue"}))
