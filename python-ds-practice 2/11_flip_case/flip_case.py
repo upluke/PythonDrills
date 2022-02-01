@@ -11,11 +11,31 @@ def flip_case(phrase, to_swap):
         'AaaaHHH'
 
     """
-    # if ord(to_swap)<97:
-    #     phrase.replace(to_swap,'_')
-    # else:
+    # solution:
+    # to_swap = to_swap.lower()
+    # out = ""
+
+    # for ltr in phrase:
+    #     if ltr.lower() == to_swap:
+    #         ltr = ltr.swapcase()
+    #     out += ltr
+
+    # return out
+
+    # Alternate phrasing: a bit clever, same runtime, and harder to
+    # read:
+
+    # to_swap = to_swap.lower()
+    #
+    # fixed = [
+    #     (char.swapcase() if char.lower() == to_swap else char)
+    #     for char in phrase
+    # ]
+    #
+    # return "".join(fixed)
+
     phrase = phrase.replace(to_swap, '_')
-    if to_swap.islower():  # ord(to_swap) >= 97
+    if to_swap.islower():
         phrase = phrase.replace(to_swap.upper(), to_swap)
         phrase = phrase.replace('_', to_swap.upper())
     else:
