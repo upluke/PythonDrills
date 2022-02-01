@@ -21,6 +21,9 @@ def is_palindrome(phrase):
         >>> is_palindrome('Noon')
         True
     """
+    # solution:
+    # normalized = phrase.lower().replace(' ', '')
+    # return normalized == normalized[::-1]
 
     clean_input = get_clean_input(phrase)
     return clean_input == clean_input[::-1]
