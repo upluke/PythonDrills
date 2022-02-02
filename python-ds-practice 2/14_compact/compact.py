@@ -4,6 +4,8 @@ def compact(lst):
         >>> compact([0, 1, 2, '', [], False, (), None, 'All done'])
         [1, 2, 'All done']
     """
+    # solution:
+    # return [val for val in lst if val]
     i = 0
     while i < len(lst):
         if not lst[i]:
