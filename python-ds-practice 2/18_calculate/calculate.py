@@ -26,6 +26,24 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         >>> calculate('foo', 2, 3)
 
     """
+    # solution:
+
+    # if operation == "add":
+    #     res = a + b
+    # elif operation == "subtract":
+    #     res = a - b
+    # elif operation == "multiply":
+    #     res = a * b
+    # elif operation == "divide":
+    #     res = a / b
+    # else:
+    #     return
+
+    # if make_int:
+    #     res = int(res)
+
+    # return f"{message} {res}"
+
     operations = {
         'add': lambda a, b: a+b,
         'subtract': lambda a, b: a-b,
@@ -35,9 +53,8 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
 
     if operation not in operations:
         return None
-
-    res = str(int(operations[operation](a, b))) if make_int else str(
-        operations[operation](a, b))
+    calculation = operations[operation](a, b)
+    res = str(int(calculation)) if make_int else str(calculation)
 
     return message + ' ' + res
 
