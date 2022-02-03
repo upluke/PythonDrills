@@ -53,6 +53,7 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
 
     if operation not in operations:
         return None
+
     calculation = operations[operation](a, b)
     res = str(int(calculation)) if make_int else str(calculation)
 
