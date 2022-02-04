@@ -19,6 +19,16 @@ def friend_date(a, b):
         >>> friend_date(sauron, gandalf)
         True
     """
+    # solution:
+    # if set(a[2]) & set(b[2]):
+    #     return True
+    # else:
+    #     return False
+
+    # can even do by converting to boolean!
+    #
+    # return bool(set(a[2] & set(b[2])
+
     hobby_collection = a[2]+b[2]
     for hobby in hobby_collection:
         if hobby_collection.count(hobby) > 1:
