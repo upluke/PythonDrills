@@ -17,6 +17,8 @@ def extract_full_names(people):
         >>> extract_full_names(names)
         ['Ada Lovelace', 'Grace Hopper']
     """
+    # solution:
+    #  return [f"{person['first']} {person['last']}" for person in people]
     return functools.reduce(lambda acc, curr: acc +
                             [curr["first"]+' '+curr["last"]], people, [])
 
