@@ -13,6 +13,20 @@ def find_factors(num):
     >>> find_factors(321421)
     [1, 293, 1097, 321421]
     """
+    # solution:
+    # n_list = [n for n in range (1, num // 2 + 1) if num % n == 0]
+    # n_list.append(num)
+    # return n_list
+
+    # or could write by hand with a while loop
+    #
+    # factors = []
+    # while(n <= num):
+    #     if num % n == 0:
+    #         factors.append(n)
+    #     n += 1
+    #
+    # return factors
 
     return [i for i in range(1, num+1) if (num/i).is_integer()]
 
