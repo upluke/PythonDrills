@@ -22,7 +22,23 @@ def two_oldest_ages(ages):
     # can take *any* type of list-like-thing, and returns a new, sorted list
     # from it.
 
-    return sorted(set(ages))[-2:]
+    # solution:
+
+    # 1. find two oldest by sorting unique; this is O(n log n)
+    # uniq_ages = set(ages)
+    # oldest = sorted(uniq_ages)[-2:]
+    # return tuple(oldest)
+
+    # 2. a longer, but O(n) runtime would be:
+
+    # my solution1:
+    # return sorted(set(ages))[-2:]
+    # my solution2:
+    current_max, return_num2 = 0, max(ages)
+    for age in ages:
+        if age > current_max and age != return_num2:
+            current_max = age
+    return (current_max, return_num2)
 
 
 print(two_oldest_ages([1, 2, 10, 8]))
