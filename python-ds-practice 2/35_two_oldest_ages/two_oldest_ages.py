@@ -31,6 +31,19 @@ def two_oldest_ages(ages):
 
     # 2. a longer, but O(n) runtime would be:
 
+    # uniq_ages = set(ages)
+    # oldest = None
+    # second = None
+
+    # for age in uniq_ages:
+    #     if oldest is None or age > oldest:
+    #         second = oldest
+    #         oldest = age
+    #     elif second is None or age > second:
+    #         second = age
+
+    # return (second, oldest)
+
     # my solution1:
     # return sorted(set(ages))[-2:]
     # my solution2:
